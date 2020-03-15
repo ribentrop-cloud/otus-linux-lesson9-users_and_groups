@@ -18,7 +18,7 @@ sudo usermod -G weekend_admin testuser2
 ```
 2. Дополнительно в целях проверки домашнего задания разрешаем вход по ssh с аутентификацией по паролю:
 ```sh
-sudo sed  -i -E "s/#PasswordAuthentication\s+yes/PasswordAuthentication yes/" /etc/ssh/sshd_config
+sudo sed  -i -E "s/^PasswordAuthentication\s+no/PasswordAuthentication yes/" /etc/ssh/sshd_config
 sudo systemctl restart sshd
 ```
 3. Меняем _/etc/pam.d/sshd_ для прохождения дополнительной аутентификации через модуль pam_exec:
