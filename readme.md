@@ -23,7 +23,7 @@ sudo systemctl restart sshd
 ```
 3. Меняем _/etc/pam.d/sshd_ для прохождения дополнительной аутентификации через модуль pam_exec:
 ```sh
-sudo sed  -i -E "s/account.+include.+password-auth/account    include    password-auth\naccount    required    pam_exec.so    \/usr\/local\/bin\/is-admin.sh/" /etc/pam.d/sshd
+sudo sed  -i -E "s/account.+required.+pam_nologin.so/account    required     pam_nologin.so\naccount    required    pam_exec.so    \/usr\/local\/bin\/is-admin.sh/" /etc/pam.d/sshd
 ```
 4. Создаем bash срипт, который выясняет, входит ли пользователь в группу _admin/weekend_admin_, получает день недели и принимает решение о завершении с кодом 0 или 1 в зависимости от принятого решения.  
 Этот скрипт будет размещен в /usr/local/bin/:
