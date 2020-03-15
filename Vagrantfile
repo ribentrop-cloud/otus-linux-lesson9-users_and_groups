@@ -25,7 +25,5 @@ config.vm.provision "shell",inline: "sudo -s"
 config.vm.provision "shell",inline: "cp /tmp/provisioning_files/is-admin.sh /usr/local/bin/is-admin.sh"
 
 
-# --- Provisioning to change sshd and pam configs ---
-#config.vm.provision "shell", path: "./change-configs.sh"
 
 end
