@@ -52,5 +52,10 @@ fi
 
 __Проверка:__
 1. vagrant up
-2. vagrant ssh
-3. Пробуем войти под _testuser,testuser1,testuser_ с паролем _Otus2020_. Получаем результат в зависимости от дня недели.
+2. vagrant ssh (пользователь vagrant так же был включен в группу __admin__ )
+3. Пробуем войти:
+-ssh testuser@localhost
+-ssh testuser@localhost
+-ssh testuser@localhost 
+с паролем _Otus2020_. 
+Получаем результат в зависимости от дня недели.
